@@ -12,7 +12,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 public class SpringSecurityApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(com.logic.SpringRedditCloneApplication.class, args);
+        SpringApplication.run(com.logic.SpringSecurityApplication.class, args);
     }
 
 }
