@@ -1,4 +1,4 @@
-package com.programming.techie.springredditclone;
+package com.logic;
 
 import com.programming.techie.springredditclone.config.SwaggerConfiguration;
 import org.springframework.boot.SpringApplication;
@@ -9,10 +9,10 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @SpringBootApplication
 @EnableAsync
 @Import(SwaggerConfiguration.class)
-public class SpringRedditCloneApplication {
+public class SpringSecurityApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(com.programming.techie.springredditclone.SpringRedditCloneApplication.class, args);
+        SpringApplication.run(com.logic.SpringRedditCloneApplication.class, args);
     }
 
 }
