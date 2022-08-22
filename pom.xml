@@ -8,10 +8,10 @@
         <version>2.6.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.programming.techie</groupId>
-    <artifactId>spring-reddit-clone</artifactId>
+    <groupId>com.logic</groupId>
+    <artifactId>SpringSecurity</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-reddit-clone</name>
+    <name>SpringSecurityDemo</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -70,23 +70,9 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.mapstruct</groupId>
-            <artifactId>mapstruct</artifactId>
-            <version>${org.mapstruct.version}</version>
-            <scope>compile</scope>
-        </dependency>
+
         <!-- Spring Fox Dependencies -->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>3.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>3.0.0</version>
-        </dependency>
+
         <!-- For Displaying time as Relative Time Ago ("Posted 1 Day ago")-->
         <dependency>
             <groupId>com.github.marlonlom</groupId>
