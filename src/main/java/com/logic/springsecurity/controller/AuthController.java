@@ -5,6 +5,7 @@ import com.logic.springsecurity.dto.AuthenticationResponse;
 import com.logic.springsecurity.dto.LoginRequest;
 import com.logic.springsecurity.dto.RefreshTokenRequest;
 import com.logic.springsecurity.dto.RegisterRequest;
+import com.logic.springsecurity.model.Response;
 import com.logic.springsecurity.service.AuthService;
 
 import com.logic.springsecurity.service.RefreshTokenService;
@@ -14,6 +15,11 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
+
+import java.util.concurrent.TimeUnit;
+
+import static java.time.LocalDateTime.now;
+import static java.util.Map.of;
 import static org.springframework.http.HttpStatus.OK;
 
 @RestController
@@ -35,6 +41,19 @@ public class AuthController {
     public ResponseEntity<String> verifyAccount(@PathVariable String token) {
         authService.verifyAccount(token);
         return new ResponseEntity<>("Account Activated Successfully", OK);
+    }
+    @GetMapping("/list")
+    public ResponseEntity<Response> getUsers() throws InterruptedException {
+        TimeUnit.SECONDS.sleep(1);
+        return ResponseEntity.ok(
+                Response.builder()
+                        .timeStamp(now())
+                        .data(of("users", authService.list(30)))
+                        .message("users retrieved")
+                        .status(OK)
+                        .statusCode(OK.value())
+                        .build()
+        );
     }
 
     @PostMapping("/login")

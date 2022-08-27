@@ -25,8 +25,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
+import java.util.Collection;
 import java.util.Optional;
 import java.util.UUID;
+
+import static org.springframework.data.domain.PageRequest.of;
 
 @Service
 @AllArgsConstructor
@@ -115,5 +118,9 @@ public class AuthService {
     public boolean isLoggedIn() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         return !(authentication instanceof AnonymousAuthenticationToken) && authentication.isAuthenticated();
+    }
+
+    public Collection<User> list(int limit) {
+        return userRepository.findAll(of(0, limit)).toList();
     }
 }
