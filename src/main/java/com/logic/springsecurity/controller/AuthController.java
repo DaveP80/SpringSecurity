@@ -42,6 +42,7 @@ public class AuthController {
         authService.verifyAccount(token);
         return new ResponseEntity<>("Account Activated Successfully", OK);
     }
+    
     @GetMapping("/list")
     public ResponseEntity<Response> getUsers() throws InterruptedException {
         TimeUnit.SECONDS.sleep(1);
